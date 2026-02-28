@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="tr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>RisusMC - Minecraft Topluluk Sitesi</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <div class="brand">🧱 RisusMC</div>
+      <nav>
+        <button class="nav-link" data-target="home">Ana Sayfa</button>
+        <button class="nav-link" data-target="market">Market</button>
+        <button class="nav-link" data-target="wiki">Wiki</button>
+        <button class="nav-link guest-only" data-target="login">Giriş Yap</button>
+        <button class="nav-link guest-only" data-target="register">Kayıt Ol</button>
+        <button class="nav-link user-only" data-target="account">Hesabım</button>
+        <button class="nav-link" data-target="support">Destek</button>
+        <button class="nav-link user-only" id="logoutBtn">Çıkış Yap</button>
+      </nav>
+    </header>
+
+    <main>
+      <section id="home" class="page active">
+        <h1>RisusMC Sunucusuna Hoş Geldin</h1>
+        <p>Türkiye'nin topluluk odaklı Minecraft deneyimi: etkinlikler, market, wiki ve hızlı destek burada.</p>
+        <div class="cards">
+          <article class="card">
+            <h3>🎁 Günlük Ödüller</h3>
+            <p>Her gün giriş yap, kasa anahtarı ve coin kazan.</p>
+          </article>
+          <article class="card">
+            <h3>⚔️ Özel Oyun Modları</h3>
+            <p>SkyBlock, Survival ve mini oyunlar tek hub altında.</p>
+          </article>
+          <article class="card">
+            <h3>🛒 Güvenli Market</h3>
+            <p>Rütbe ve item satın al, hesabına anında tanımlansın.</p>
+          </article>
+        </div>
+      </section>
+
+      <section id="market" class="page">
+        <h2>Market</h2>
+        <p>Coin bakiyen: <strong id="coinBalance">0</strong></p>
+        <div id="marketItems" class="cards"></div>
+        <h3>Sepetim</h3>
+        <ul id="cartList"></ul>
+        <button id="buyBtn" class="primary">Satın Al</button>
+        <p id="marketMessage" class="message"></p>
+      </section>
+
+      <section id="wiki" class="page">
+        <h2>Wiki</h2>
+        <input id="wikiSearch" type="search" placeholder="Wiki'de ara..." />
+        <div id="wikiList"></div>
+      </section>
+
+      <section id="login" class="page guest-only-page">
+        <h2>Giriş Yap</h2>
+        <form id="loginForm" class="form">
+          <input name="username" placeholder="Kullanıcı adı" required />
+          <input name="password" type="password" placeholder="Şifre" required />
+          <button class="primary" type="submit">Giriş Yap</button>
+        </form>
+        <p id="loginMessage" class="message"></p>
+      </section>
+
+      <section id="register" class="page guest-only-page">
+        <h2>Kayıt Ol</h2>
+        <form id="registerForm" class="form">
+          <input name="username" placeholder="Kullanıcı adı" required minlength="3" />
+          <input name="email" type="email" placeholder="E-posta" required />
+          <input name="password" type="password" placeholder="Şifre" required minlength="6" />
+          <button class="primary" type="submit">Hesap Oluştur</button>
+        </form>
+        <p id="registerMessage" class="message"></p>
+      </section>
+
+      <section id="account" class="page user-only-page">
+        <h2>Hesabım</h2>
+        <p>Kullanıcı: <strong id="accountUsername"></strong></p>
+        <p>E-posta: <strong id="accountEmail"></strong></p>
+        <p>Coin: <strong id="accountCoins"></strong></p>
+        <h3>Satın Alma Geçmişi</h3>
+        <ul id="purchaseHistory"></ul>
+      </section>
+
+      <section id="support" class="page">
+        <h2>Destek</h2>
+        <form id="supportForm" class="form">
+          <input name="title" placeholder="Konu" required />
+          <textarea name="message" placeholder="Sorununuzu yazın" rows="4" required></textarea>
+          <button class="primary" type="submit">Talep Gönder</button>
+        </form>
+        <h3>Gönderilen Talepler</h3>
+        <ul id="tickets"></ul>
+      </section>
+    </main>
+
+    <footer>© 2026 RisusMC - Tüm hakları saklıdır.</footer>
+    <script src="app.js"></script>
+  </body>
+</html>
